@@ -14,6 +14,11 @@ use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
+use App\Orchid\Screens\TodoListMain;
+use App\Orchid\Screens\TodoListCreate;
+use App\Orchid\Screens\TodoListInfo;
+use App\Orchid\Screens\TodoListEdit;
+
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
@@ -100,5 +105,13 @@ Route::screen('/examples/layouts', ExampleLayoutsScreen::class)->name('platform.
 Route::screen('/examples/grid', ExampleGridScreen::class)->name('platform.example.grid');
 Route::screen('/examples/charts', ExampleChartsScreen::class)->name('platform.example.charts');
 Route::screen('/examples/cards', ExampleCardsScreen::class)->name('platform.example.cards');
+
+Route::screen('/todolist', TodoListMain::class)->name('platform.todolist');
+// Создание новой задачи
+Route::screen('/todolist/create', TodoListCreate::class)->name('platform.todolist.create');
+
+// Редактирование существующей задачи
+Route::screen('/todolist/edit/{todo_id}', TodoListEdit::class)->name('platform.todolist.edit');
+Route::screen('/todolist/info/{todo_id}', TodoListInfo::class)->name('platform.todolist.info');
 
 //Route::screen('idea', Idea::class, 'platform.screens.idea');
